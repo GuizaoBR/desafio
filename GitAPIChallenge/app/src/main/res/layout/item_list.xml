@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_130sdp">
+
+
+    <TextView
+        android:id="@+id/tv_repo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/generic_text_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/_56sdp"
+        android:textSize="22sp"
+        android:maxEms="15"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:maxEms="25"
+        tools:text="@string/generic_text_title"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:layout_constraintEnd_toStartOf="@id/image_avatar"
+        app:layout_constraintStart_toStartOf="@id/tv_repo_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_repo_name" />
+
+    <TextView
+        android:id="@+id/tv_forks_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_56sdp"
+        tools:text="@string/generic_text_number"
+        android:gravity="center"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="@dimen/small_text_size"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_24sdp"
+        app:drawableStartCompat="@android:drawable/ic_menu_share"
+        app:drawableTint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_stars_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_24sdp"
+        android:textSize="@dimen/small_text_size"
+        tools:text="@string/generic_text_number"
+        android:textStyle="bold"  android:gravity="center"
+        android:layout_marginBottom="@dimen/_24sdp"
+        app:drawableStartCompat="@android:drawable/btn_star_big_on"
+        android:textColor="@android:color/holo_orange_light"
+        app:drawableTint="@android:color/holo_orange_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_forks_count" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/_56sdp"
+        android:layout_marginTop="@dimen/_16sdp"/>
+
+    <ImageView
+        android:id="@+id/image_avatar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginEnd="@dimen/_24sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/avatar_image_description" />
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/generic_text_title"
+        android:textColor="@android:color/darker_gray"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/image_avatar"
+        app:layout_constraintStart_toStartOf="@+id/image_avatar"
+        app:layout_constraintTop_toBottomOf="@id/image_avatar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

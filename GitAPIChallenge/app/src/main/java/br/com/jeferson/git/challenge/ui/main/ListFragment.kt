@@ -7,24 +7,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.jeferson.git.challenge.R
-import br.com.jeferson.git.challenge.viewmodel.MainViewModel
+import br.com.jeferson.git.challenge.viewmodel.ListViewModel
 
-class MainFragment : Fragment() {
+class ListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = ListFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: ListViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_list_repo, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

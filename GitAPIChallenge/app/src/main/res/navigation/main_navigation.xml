@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="br.com.jeferson.git.challenge.ui.main.MainFragment"
+        android:name="br.com.jeferson.git.challenge.ui.main.ListFragment"
         android:label="main_fragment"
-        tools:layout="@layout/main_fragment" />
+        tools:layout="@layout/fragment_list_repo" />
 </navigation>
