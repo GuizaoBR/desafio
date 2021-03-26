@@ -74,6 +74,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
     implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
 
+    //Auto dimen
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
