@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
+    android:label="@string/nav_app_bar_navigate_up_description"
     app:startDestination="@id/mainFragment">
-
     <fragment
         android:id="@+id/mainFragment"
         android:name="br.com.jeferson.git.challenge.ui.main.ListFragment"
         android:label="main_fragment"
         tools:layout="@layout/fragment_list_repo" />
+
 </navigation>

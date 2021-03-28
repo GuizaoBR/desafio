@@ -54,7 +54,6 @@ class ItemsAdapter(private val onListClickListener: WeakReference<OnListClickLis
 
             Picasso.get()
                 .load(item.owner.avatarUrl)
-                .placeholder(R.drawable.ic_launcher_background)
                 .into(avatar)
         }
     }
