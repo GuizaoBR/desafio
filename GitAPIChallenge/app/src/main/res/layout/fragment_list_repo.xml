@@ -15,6 +15,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/item_list" />
+        tools:listitem="@layout/item_list"
+        android:visibility="visible"/>
 
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/no_data"
+        android:textSize="@dimen/small_text_size"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center" android:visibility="gone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

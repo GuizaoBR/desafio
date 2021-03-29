@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isEmpty
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -23,7 +24,7 @@ class ListFragment : Fragment(), OnListClickListener {
         fun newInstance() = ListFragment()
     }
 
-     val viewModel: ListViewModel by viewModels()
+    val viewModel: ListViewModel by viewModels()
 
     private val adapter = ItemsAdapter(WeakReference(this))
 
@@ -34,10 +35,13 @@ class ListFragment : Fragment(), OnListClickListener {
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_list_repo, container, false)
     }
+
     private fun initList() {
         recycler_view.adapter = adapter
         adapter.notifyDataSetChanged()
@@ -47,8 +51,16 @@ class ListFragment : Fragment(), OnListClickListener {
         viewModel.itemsPagedList.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+        viewModel.liveDataListWithItems.observe(viewLifecycleOwner, Observer {withItens ->
+            if (!withItens) {
+                recycler_view.visibility = View.GONE
+                tv_empty.visibility = View.VISIBLE
+            } else {
+                recycler_view.visibility = View.VISIBLE
+                tv_empty.visibility =  View.GONE
+            }
+        })
     }
-
 
 
     override fun onSelectItem(item: Item) {

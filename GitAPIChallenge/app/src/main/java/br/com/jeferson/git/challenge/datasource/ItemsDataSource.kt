@@ -19,6 +19,7 @@ class ItemsDataSource: PageKeyedDataSource<Int, Item>() {
 
         call.enqueue(object: Callback<Response<Item>> {
             override fun onFailure(call: Call<Response<Item>>, t: Throwable) {
+                callback.onResult(emptyList(), FIRST_PAGE, FIRST_PAGE)
             }
             override fun onResponse(
                 call: Call<Response<Item>>,
@@ -45,7 +46,6 @@ class ItemsDataSource: PageKeyedDataSource<Int, Item>() {
 
         call.enqueue(object: Callback<Response<Item>> {
             override fun onFailure(call: Call<Response<Item>>, t: Throwable) {
-
             }
 
             override fun onResponse(call: Call<Response<Item>>, response: retrofit2.Response<Response<Item>>) {

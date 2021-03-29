@@ -13,12 +13,12 @@ import br.com.jeferson.git.challenge.model.Item
 
 
 class ListViewModel : ViewModel() {
+
     val itemsPagedList: LiveData<PagedList<Item>>
 
     private val liveDataSource: LiveData<ItemsDataSource>
-    private val liveDataListWithItems: LiveData<Boolean>
+    val liveDataListWithItems: LiveData<Boolean>
 
-    private val TAG = ListViewModel::class.simpleName
     init {
         val factory = ItemsFactory()
 
@@ -32,18 +32,18 @@ class ListViewModel : ViewModel() {
 
         itemsPagedList = LivePagedListBuilder(factory, config).setBoundaryCallback(object : BoundaryCallback<Item>() {
             override fun onZeroItemsLoaded() {
-                Log.d(TAG, "onZeroItemsLoaded: ")
-                liveDataListWithItems.setValue(false)
+                liveDataListWithItems.value = false
+                super.onZeroItemsLoaded()
             }
 
             override fun onItemAtFrontLoaded(itemAtFront: Item) {
-                Log.d(TAG, "onItemAtFrontLoaded: ")
-                liveDataListWithItems.setValue(true)
+                liveDataListWithItems.value = true
+                super.onItemAtFrontLoaded(itemAtFront)
             }
 
             override fun onItemAtEndLoaded(itemAtEnd: Item) {
-                Log.d(TAG, "onItemAtEndLoaded: ")
-                liveDataListWithItems.setValue(true)
+                liveDataListWithItems.value = true
+                super.onItemAtFrontLoaded(itemAtEnd)
             }
         }).build()
 
