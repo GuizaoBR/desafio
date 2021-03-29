@@ -28,7 +28,7 @@ class MainActivityTest {
     fun setUp() {
     }
 
-    /* Iniciar a atividade no modo avião para facilitar o testes de falha no carregamento */
+    /* Iniciar a atividade no modo avião para facilitar o teste de falha no carregamento */
     @Test
     fun mainActivityTest_StartWithout_Network() {
         val textView = onView(
