@@ -3,6 +3,6 @@ package br.com.jeferson.git.challenge.ui.main
 import br.com.jeferson.git.challenge.model.Item
 import br.com.jeferson.git.challenge.model.PRItem
 
-interface OnListClickListener {
-    fun onSelectItem(item: Item)
+interface OnPRClickListener {
+    fun onSelectItem(item: PRItem)
 }

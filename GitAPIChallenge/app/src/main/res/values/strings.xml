@@ -3,4 +3,6 @@
     <string name="generic_text_title">DilmesIpsum</string>
     <string name="generic_text_number">12</string>
     <string name="avatar_image_description">Imagem contendo o avatar do usuario.</string>
+    <string name="title_pr_fragment">Lista de PR\'s</string>
+    <string name="title_list_fragment">Lista JavaPop</string>
 </resources>
